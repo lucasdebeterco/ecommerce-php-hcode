@@ -34,14 +34,49 @@ $app->get('/admin/login', function() {
 
 $app->post('/admin/login', function() {
     User::login($_POST["login"], $_POST["password"]);
-    echo 'oi';
-    header("Location: /admin/");
+
+    header("Location: /admin");
+    exit();
 });
 
 $app->get('/admin/logout', function() {
     User::logout();
 
     header("Location: /admin/login");
+    exit();
+});
+
+$app->get("/admin/users", function() {
+    User::verifyLogin();
+
+    $page = new PageAdmin();
+    $page->setTpl("users");
+});
+
+$app->get("/admin/users/create", function() {
+    User::verifyLogin();
+
+    $page = new PageAdmin();
+    $page->setTpl("users-create");
+});
+
+$app->get("/admin/users/:idUser", function($idUser) {
+    User::verifyLogin();
+
+    $page = new PageAdmin();
+    $page->setTpl("users-update");
+});
+
+$app->post("/admin/users/create", function() {
+    User::verifyLogin();
+});
+
+$app->post("/admin/users/:idUser", function($idUser) {
+    User::verifyLogin();
+});
+
+$app->delete("/admin/users/:idUser", function($idUser) {
+    User::verifyLogin();
 });
 
 $app->run();
