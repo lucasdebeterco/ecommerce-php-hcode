@@ -49,8 +49,12 @@ $app->get('/admin/logout', function() {
 $app->get("/admin/users", function() {
     User::verifyLogin();
 
+    $users = User::listAll();
+
     $page = new PageAdmin();
-    $page->setTpl("users");
+    $page->setTpl("users", array(
+        "users"=>$users
+    ));
 });
 
 $app->get("/admin/users/create", function() {
@@ -58,6 +62,10 @@ $app->get("/admin/users/create", function() {
 
     $page = new PageAdmin();
     $page->setTpl("users-create");
+});
+
+$app->get("/admin/users/:idUser/delete", function($idUser) {
+    User::verifyLogin();
 });
 
 $app->get("/admin/users/:idUser", function($idUser) {
@@ -72,10 +80,6 @@ $app->post("/admin/users/create", function() {
 });
 
 $app->post("/admin/users/:idUser", function($idUser) {
-    User::verifyLogin();
-});
-
-$app->delete("/admin/users/:idUser", function($idUser) {
     User::verifyLogin();
 });
 
