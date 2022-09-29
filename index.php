@@ -66,6 +66,13 @@ $app->get("/admin/users/create", function() {
 
 $app->get("/admin/users/:idUser/delete", function($idUser) {
     User::verifyLogin();
+
+    $user = new User();
+    $user->get((int)$idUser);
+    $user->delete();
+
+    header("Location: /admin/users");
+    exit();
 });
 
 $app->get("/admin/users/:idUser", function($idUser) {
