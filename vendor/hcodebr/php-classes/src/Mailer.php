@@ -5,8 +5,8 @@ namespace Hcode;
 use Rain\Tpl;
 
 class Mailer {
-    const USERNAME = "cursophp7hcode@gmail.com";
-    const PASSWORD = "<?password?>";
+    const USERNAME = "lucas.debeterco@unidavi.edu.br";
+    const PASSWORD = "Un!@1024521@";
     const NAME_FROM = "Hcode Store";
 
     private $mail;
