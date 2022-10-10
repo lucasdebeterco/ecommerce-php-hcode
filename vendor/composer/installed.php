@@ -3,7 +3,7 @@
         'name' => 'lucasdebeterco/ecommerce-php-hcode',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'bcc52b2fd03fd42aa654ee31db8a861be48ada9e',
+        'reference' => '4712295c71313b4c9b60d823cc413295bf8e8749',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'lucasdebeterco/ecommerce-php-hcode' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'bcc52b2fd03fd42aa654ee31db8a861be48ada9e',
+            'reference' => '4712295c71313b4c9b60d823cc413295bf8e8749',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
