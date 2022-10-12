@@ -12,7 +12,7 @@ class Model {
 
         switch ($method) {
             case "get":
-                return $this->values[$fieldName];
+                return ($this->values[$fieldName] ?? NULL);
             case "set":
                 $this->values[$fieldName] = $arguments[0];
                 break;

@@ -184,5 +184,20 @@ $app->get("/admin/categories", function () {
     ]);
 });
 
+$app->get("/admin/categories/create", function () {
+    $page = new PageAdmin();
+    $page->setTpl("categories-create");
+});
+
+$app->post("/admin/categories/create", function () {
+    $category = new Category();
+
+    $category->setData($_POST);
+    $category->save();
+
+    header("Location: /admin/categories");
+    exit;
+});
+
 $app->run();
  ?>
